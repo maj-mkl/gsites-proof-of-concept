@@ -18,7 +18,7 @@
 
 					var gadgetHelper = null;
 					var prefs = new _IG_Prefs();
-					var tableQueryUrl = 'https://docs.google.com/spreadsheets/d/1trBV4aIU6sb04Xd8op-rEzyGkqNVWcT8qQbedaaA4RY/edit#gid=0&range=A2:A11';
+					var tableQueryUrl = 'https://docs.google.com/spreadsheets/d/1trBV4aIU6sb04Xd8op-rEzyGkqNVWcT8qQbedaaA4RY/edit#gid=704023108';
 					var urlTable = prefs.getString(tableQueryUrl);
 
 					_IG_RegisterOnloadHandler(loadVisualizationAPI);
