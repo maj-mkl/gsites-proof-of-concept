@@ -38,7 +38,7 @@
 					}
 
 					function handleQueryResponse(response) {
-						var data = response.getDataTable();
+						data = response.getDataTable();
 						var rows = data.getNumberOfRows();
 						var content = "";
 
