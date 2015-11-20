@@ -18,7 +18,7 @@
 
 				var gadgetHelper = null;
 				var prefs = new _IG_Prefs();
-				var urlTable = 'http://spreadsheets.google.com/tq?key=1trBV4aIU6sb04Xd8op-rEzyGkqNVWcT8qQbedaaA4RY&range=A1:C5';
+				var urlTable = 'http://spreadsheets.google.com/tq?key=1trBV4aIU6sb04Xd8op-rEzyGkqNVWcT8qQbedaaA4RY&gid=1&tq=select%20A';			
 
 				_IG_RegisterOnloadHandler(loadVisualizationAPI);
 
