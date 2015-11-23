@@ -18,7 +18,9 @@
 			</style>
 
 			<script src="https://www.google.com/jsapi" type="text/javascript"></script>
-			
+
+			<div id="table"></div>
+
 			<script type="text/javascript">
 				google.load('visualization', '1', {packages: ['table']});
 			</script>
@@ -56,8 +58,6 @@
 				google.setOnLoadCallback(getSpreadsheet);
 
 			</script>
-
-			<div id="container"></div>
 
 		]]>
 	</Content>
