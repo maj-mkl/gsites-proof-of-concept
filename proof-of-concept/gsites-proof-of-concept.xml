@@ -10,14 +10,54 @@
 	<Content type="html">
 		<![CDATA[
 
-			<link rel="stylesheet" type="text/css" href="gsites-proof-of-concept.css">
+			<style type="text/css">
+
+				ul li {
+				  color: #999; }
+
+			</style>
 
 			<script src="https://www.google.com/jsapi" type="text/javascript"></script>
-			<script type="text/javascript" src="../load-visualization.js"></script>
-    		
-			<div id="container"></div>
 			
-			<script type="text/javascript" src="gsites-proof-of-concept.js"></script>
+			<script type="text/javascript">
+				google.load('visualization', '1', {packages: ['table']});
+			</script>
+
+			<script type="text/javascript">
+
+				var sheetName = encodeURIComponent('Newsletter t&c');
+				var queryString = encodeURIComponent('SELECT A offset 1');
+				var query = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1trBV4aIU6sb04Xd8op-rEzyGkqNVWcT8qQbedaaA4RY&sheet=' + sheetName + '&tq=' + queryString);      
+
+				function getSpreadsheet() {
+					query.send(handleQueryResponse);
+				}
+
+				function handleQueryResponse(response) {
+					if (response.isError()) {
+						alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+						return;
+					}
+					var dataTable = response.getDataTable();
+					dataTable.getNumberOfRows() ? printDataTable(dataTable) : alert('spreadsheets is empty');
+				}
+
+				function printDataTable(dataTable) {
+					var template = '';
+
+					template += '<ul>';
+					for(index = 0; index < dataTable.getNumberOfRows(); index++) {
+						template += '<li>' + dataTable.getValue(index, 0) + '</li>'
+					}
+					template += '</ul>';
+					document.getElementById("table").innerHTML = template; 
+				}
+
+				google.setOnLoadCallback(getSpreadsheet);
+
+			</script>
+
+			<div id="container"></div>
 
 		]]>
 	</Content>
